@@ -1,0 +1,14 @@
+bsu\by\web\dao\ImageDao.class
+bsu\by\web\entity\Image.class
+bsu\by\web\dao\ConnectionFactory.class
+bsu\by\web\dao\UserDao.class
+bsu\by\web\command\Command.class
+bsu\by\web\command\DeleteCommand.class
+bsu\by\web\command\LoginCommand.class
+bsu\by\web\Controller.class
+bsu\by\web\command\LogoutCommand.class
+bsu\by\web\command\CreateCommand.class
+bsu\by\web\command\UpdateCommand.class
+bsu\by\web\command\ReadCommand.class
+bsu\by\web\command\AddImagePage.class
+bsu\by\web\command\CommandFactory.class
