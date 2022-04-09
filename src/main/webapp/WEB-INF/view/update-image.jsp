@@ -2,5 +2,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 <body>
-<h2>Add images,Let's test!test4.</h2>
+<h2>Add images,Let's test!test5.</h2>
 </body>
