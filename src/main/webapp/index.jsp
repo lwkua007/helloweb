@@ -4,7 +4,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="static/css/login-page-style.css">
     </head>
 
     <body>
@@ -13,8 +13,8 @@
 
             <form action="controller?command=login" method="post">
                 <div class="login-field">
-                    <input type="text" name="name" required />
-                    <label>Username</label>
+                    <input type="text" name="email" required />
+                    <label>Email</label>
                 </div>
 
                 <div class="login-field">
@@ -22,7 +22,7 @@
                     <label >Password</label>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button type="submit">log in</button>
             </form>
 
             <c:if test="${error_message != null}">
@@ -31,6 +31,9 @@
                 </div>
             </c:if>
 
+            <form action="controller?command=sign up" method="post">
+                <button type="submit">sign up</button>
+            </form>
         </div>
 
     </body>

@@ -15,19 +15,19 @@ public class Controller extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException, ServletException {
+            throws IOException{
         process(req, resp);
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException, ServletException{
+            throws IOException{
         process(req, resp);
     }
 
 
     public void process(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException, ServletException{
+            throws IOException{
 
 
         try {

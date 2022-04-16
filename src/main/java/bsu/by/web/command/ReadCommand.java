@@ -14,12 +14,12 @@ public class ReadCommand implements Command{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp)
-            throws SQLException, ClassNotFoundException {
+            throws SQLException {
 
         ImageDao dao = new ImageDao();
         List<Image> images = dao.findAll();
         req.setAttribute("images", images);
 
-        return "WEB-INF/view/image-list.jsp";
+        return "WEB-INF/view/read.jsp";
     }
 }

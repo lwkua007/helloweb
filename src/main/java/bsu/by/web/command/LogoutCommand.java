@@ -13,6 +13,6 @@ public class LogoutCommand implements Command{
     public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, ClassNotFoundException {
 
-        return "index.jsp";
+        return "lodin.jsp";
     }
 }
