@@ -4,7 +4,7 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="static/css/login-page-style.css">
+        <link rel="stylesheet" type="text/css" href="static/css/sign-up-page-style.css">
     </head>
 
     <body>
@@ -25,15 +25,14 @@
                 <button type="submit">log in</button>
             </form>
 
+            <button type="submit">sign up</button>
+
             <c:if test="${error_message != null}">
                 <div class="login-error">
                     ${error_message}
                 </div>
             </c:if>
 
-            <form action="controller?command=sign up" method="post">
-                <button type="submit">sign up test</button>
-            </form>
         </div>
 
     </body>
