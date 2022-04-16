@@ -47,14 +47,14 @@ public class ImageDao {
         return images;
     }
 
-    public void save(Image image) throws SQLException, ClassNotFoundException {
+    public void save(Image image) throws SQLException{
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.
                 prepareStatement("insert into image (name, category) values (?,?)");
         statement.setString(1, image.getName());
-        statement.setString(2,image.getCategory());
+        statement.setString(2, image.getCategory());
         statement.executeUpdate();
 
     }
