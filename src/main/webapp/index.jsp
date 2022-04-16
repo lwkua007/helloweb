@@ -32,7 +32,7 @@
             </c:if>
 
             <form action="controller?command=sign up" method="post">
-                <button type="submit">sign up test1</button>
+                <button type="submit">sign up test2</button>
             </form>
         </div>
 
