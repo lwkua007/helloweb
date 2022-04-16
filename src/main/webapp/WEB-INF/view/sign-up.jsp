@@ -4,14 +4,14 @@
 <html>
 
     <head>
-        <link rel="stylesheet" type="text/css" href="static/css/sign-up-page-style.css">
+        <link rel="stylesheet" type="text/css" href="static/css/login-page.css">
     </head>
 
     <body>
         <div class="login-box">
-            <h2>Login</h2>
+            <h2>Sign Up</h2>
 
-            <form action="controller?command=login" method="post">
+            <form action="controller?command=sign up" method="post">
                 <div class="login-field">
                     <input type="text" name="email" required />
                     <label>Email</label>
@@ -22,17 +22,8 @@
                     <label >Password</label>
                 </div>
 
-                <button type="submit">log in</button>
+                <button type="submit">sign up</button>
             </form>
-
-            <button type="submit">sign up</button>
-
-            <c:if test="${error_message != null}">
-                <div class="login-error">
-                    ${error_message}
-                </div>
-            </c:if>
-
         </div>
 
     </body>

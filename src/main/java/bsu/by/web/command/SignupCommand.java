@@ -1,23 +1,26 @@
 package bsu.by.web.command;
 
-import bsu.by.web.dao.ImageDao;
-import bsu.by.web.entity.Image;
+import bsu.by.web.dao.UserDao;
+import bsu.by.web.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.sql.SQLException;
-import java.util.List;
+
 
 public class SignupCommand implements Command{
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp)
-            throws SQLException {
+            throws SQLException, ClassNotFoundException {
+        UserDao dao = new UserDao();
 
-        ImageDao dao = new ImageDao();
-        List<Image> images = dao.findAll();
-        req.setAttribute("images", images);
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
 
-        return "WEB-INF/view/index.jsp";
+        User user = new User(email, password, 0);
+        dao.signUp(user);
+
+        return "index.jsp";
     }
 }

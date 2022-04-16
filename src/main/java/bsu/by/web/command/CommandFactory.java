@@ -7,6 +7,8 @@ public class CommandFactory {
         switch (command){
             case "login":
                 return new LoginCommand();
+            case "sign-up-page":
+                return new SignupPage();
             case "sign up":
                 return new SignupCommand();
             case "create":

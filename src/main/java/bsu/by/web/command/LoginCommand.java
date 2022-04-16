@@ -13,18 +13,18 @@ public class LoginCommand implements Command{
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException {
-        String login = req.getParameter("email");
+        String email = req.getParameter("email");
         String password = req.getParameter("password");
 
         UserDao dao = new UserDao();
-        User user = dao.login(login, password);
+        User user = dao.login(email, password);
 
         if (user != null){
             req.getSession().setAttribute("user", user);
             return "WEB-INF/view/main.jsp";
         }
         else {
-            req.setAttribute("error_message", "Incorrect name or password");
+            req.setAttribute("error_message", "Incorrect email or password");
             return "index.jsp";
         }
     }
