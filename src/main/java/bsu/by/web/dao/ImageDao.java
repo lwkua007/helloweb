@@ -57,7 +57,6 @@ public class ImageDao {
         statement.setString(2,image.getCategory());
         statement.executeUpdate();
 
-        return ;
     }
 
 }

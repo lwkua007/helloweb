@@ -13,14 +13,14 @@ public class UserDao {
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.prepareStatement
-                ("select id, name, is_admin from user where name = ? and password = MD5(?)");
+                ("select id, email, is_admin from user where email = ? and password = MD5(?)");
 
         statement.setString(1,login);
         statement.setString(2,password);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()){
             return new User(resultSet.getInt("id"),
-                    resultSet.getString("name"),
+                    resultSet.getString("email"),
                     resultSet.getBoolean("is_admin"));
         }
 

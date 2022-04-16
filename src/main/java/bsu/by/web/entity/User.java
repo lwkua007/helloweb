@@ -4,13 +4,13 @@ import java.io.Serializable;
 
 public class User implements Serializable {
     private Integer id;
-    private String name;
+    private String email;
     private boolean admin;
 
 
-    public User(Integer id, String name, boolean admin) {
+    public User(Integer id, String email, boolean admin) {
         this.id = id;
-        this.name = name;
+        this.email = email;
         this.admin = admin;
     }
 
@@ -22,12 +22,12 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public boolean isAdmin() {

@@ -946,7 +946,6 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Charset>utf8mb4</Charset>
     </collation>
     <schema id="274" parent="1" name="information_schema">
-      <Current>1</Current>
       <CollationName>utf8_general_ci</CollationName>
     </schema>
     <schema id="275" parent="1" name="mylab">
@@ -962,6 +961,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="279" parent="1" name="share_photo">
+      <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="280" parent="1" name="sys">

@@ -7,6 +7,8 @@ public class CommandFactory {
         switch (command){
             case "login":
                 return new LoginCommand();
+            case "sign up":
+                return new SignupCommand();
             case "create":
                 return new CreateCommand();
             case "update":
@@ -16,7 +18,7 @@ public class CommandFactory {
             case "read":
                 return new ReadCommand();
             case "add image":
-                return new AddImagePage();
+                return new UploadPage();
             case "logout":
                 return new LogoutCommand();
             default:

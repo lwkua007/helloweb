@@ -19,6 +19,6 @@ public class DeleteCommand implements Command{
         Image image = new Image(null, name, category);
         dao.save(image);
 
-        return "WEB-INF/view/delete-image.jsp";
+        return "WEB-INF/view/delete.jsp";
     }
 }

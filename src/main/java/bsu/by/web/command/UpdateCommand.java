@@ -19,6 +19,6 @@ public class UpdateCommand implements Command{
         Image image = new Image(null, name, category);
         dao.save(image);
 
-        return "WEB-INF/view/add-image.jsp";
+        return "WEB-INF/view/update.jsp";
     }
 }
