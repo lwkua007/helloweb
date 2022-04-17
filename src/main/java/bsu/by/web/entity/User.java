@@ -13,12 +13,12 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Integer getisAdmin() {
+    public Integer getIsAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(Integer admin) {
-        isAdmin = admin;
+    public void setIsAdmin(Integer isAdmin) {
+        this.isAdmin = isAdmin;
     }
 
     public String getEmail() {
@@ -36,6 +36,4 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-
-
 }

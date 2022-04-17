@@ -11,6 +11,8 @@ public class CommandFactory {
                 return new SignupPage();
             case "sign up":
                 return new SignupCommand();
+            case "search":
+                return new SearchCommand();
             case "admin page":
                 return new AdminPage();
             case "create":

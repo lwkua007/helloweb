@@ -1,7 +1,6 @@
 package bsu.by.web.dao;
 
 
-import bsu.by.web.entity.Image;
 import bsu.by.web.entity.User;
 
 import java.sql.*;
@@ -14,13 +13,15 @@ public class UserDao {
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.prepareStatement
-                ("select email, password from user where email = ? and password = MD5(?)");
+                ("select is_admin, email, password from user where email = ? and password = MD5(?)");
 
         statement.setString(1, email);
         statement.setString(2, password);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()){
-            return new User(0, resultSet.getString("email"),
+            return new User(
+                    resultSet.getInt("is_admin"),
+                    resultSet.getString("email"),
                     resultSet.getString("password"));
         }
         return null;
@@ -47,7 +48,7 @@ public class UserDao {
                         "(email, password, is_admin, state, balance) values (?, ?, ?, 1, 0)");
         statement.setString(1, create.getEmail());
         statement.setString(2, create.getPassword());
-        statement.setInt(3, create.getisAdmin());
+        statement.setInt(3, create.getIsAdmin());
         statement.executeUpdate();
 
     }
