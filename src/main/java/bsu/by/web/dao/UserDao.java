@@ -20,8 +20,8 @@ public class UserDao {
         statement.setString(2, password);
         ResultSet resultSet = statement.executeQuery();
         if (resultSet.next()){
-            return new User(resultSet.getString("email"),
-                    resultSet.getString("password"),0);
+            return new User(0, resultSet.getString("email"),
+                    resultSet.getString("password"));
         }
         return null;
     }
@@ -36,5 +36,19 @@ public class UserDao {
         statement.setString(1, signup.getEmail());
         statement.setString(2, signup.getPassword());
         statement.executeUpdate();
+    }
+
+    public void create(User create) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("insert into user " +
+                        "(email, password, is_admin, state, balance) values (?, ?, ?, 1, 0)");
+        statement.setString(1, create.getEmail());
+        statement.setString(2, create.getPassword());
+        statement.setInt(3, create.getisAdmin());
+        statement.executeUpdate();
+
     }
 }

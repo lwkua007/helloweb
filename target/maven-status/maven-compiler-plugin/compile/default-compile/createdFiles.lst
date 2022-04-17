@@ -11,5 +11,4 @@ bsu\by\web\command\CreateCommand.class
 bsu\by\web\command\UpdateCommand.class
 bsu\by\web\entity\User.class
 bsu\by\web\command\ReadCommand.class
-bsu\by\web\command\AddImagePage.class
 bsu\by\web\command\CommandFactory.class
