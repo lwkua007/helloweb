@@ -1,43 +1,10 @@
 .text-box{
+    position: relative;
+    top: 2%;
+    horiz-align:center;
     text-align: center;
-}
-.menu-text a{
-    text-decoration: none;
-}
-.logout-text{
-    text-align: center;
-    text-decoration: none;
-}
-.read-text{
-    text-align: center;
-    text-decoration: none;
-}
-.upload-text{
-    text-align: center;
-    text-decoration: none;
-}
-.menu-box{
-    top: 1%;
-    left: 1%;
-}
-.menu-line{
-    position: absolute;
-    float: left;
-    width:20%;
-    top: 200px;
-}
-.admin-box{
-    float:left;
-    margin-top:50px;
-    cursor: pointer;
-}
-.admin-text{
-    text-align: center;
-    text-decoration: none;
 }
 .center-line{
-    position: absolute;
-    float: left;
-    width:20%;
-    top: 200px;
+    horiz-align: right;
+    width: 50%;
 }

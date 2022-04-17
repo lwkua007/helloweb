@@ -7,6 +7,10 @@
         <h2 class="text-box">Hello,Admin</h2>
         </div>
 
+        <div>
+            <jsp:include page="/WEB-INF/view/main.jsp" />
+        </div>
+
         <div class="div-box">
 
             <div class="div-box2">

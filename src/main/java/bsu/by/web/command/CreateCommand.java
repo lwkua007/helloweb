@@ -1,7 +1,9 @@
 package bsu.by.web.command;
 
 import bsu.by.web.dao.ImageDao;
+import bsu.by.web.dao.UserDao;
 import bsu.by.web.entity.Image;
+import bsu.by.web.entity.User;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -11,13 +13,14 @@ public class CreateCommand implements Command{
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, ClassNotFoundException {
-        ImageDao dao = new ImageDao();
+        UserDao dao = new UserDao();
 
-        String name = req.getParameter("name");
-        String category = req.getParameter("category");
+        Integer isAdmin = Integer.parseInt(req.getParameter("isAdmin"));
+        String email = req.getParameter("email");
+        String password = req.getParameter("password");
 
-        Image image = new Image(null, name, category);
-        dao.save(image);
+        User user = new User(isAdmin, email, password);
+        dao.create(user);
 
         return "WEB-INF/view/create.jsp";
     }

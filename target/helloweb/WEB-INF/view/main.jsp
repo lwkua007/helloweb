@@ -1,38 +1,21 @@
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
     </head>
     <body>
-        <div>
-        <h2 class="text-box">Share free!</h2>
+        <div class="text-box">
+        <h1>Share free!</h1>
         </div>
 
         <div class="menu-box">
-            <div class="menu-text">
-                <a href="controller?command=logout" class="logout-text">Logout</a>
-            </div><br>
-
-            <div class="menu-text">
-                <a href="controller?command=read" class="read-text">Search</a>
-            </div><br>
-
-            <div class="menu-text">
-                <a href="controller?command=upload" class="upload-text">Upload</a>
-            </div>
-        </div>
-
-        <div>
-            <hr class="menu-line"/>
-        </div>
-
-        <div class="admin-box">
-            <a href="controller?command=admin page" class="admin-text">Management</a>
+            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
         <div>
             <hr class="center-line"/>
         </div>
-
 
     </body>
 </html>
