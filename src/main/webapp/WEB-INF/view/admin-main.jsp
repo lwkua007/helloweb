@@ -1,10 +1,10 @@
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="../../static/css/main-page.css">
+        <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
     </head>
     <body>
         <div>
-        <h2 class="text-box">Hello,User</h2>
+        <h2 class="text-box">Hello,Admin</h2>
         </div>
 
         <div class="div-box">
@@ -45,6 +45,7 @@
             </div>
 
         </div>
+
 
     </body>
 </html>

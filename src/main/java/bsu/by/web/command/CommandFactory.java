@@ -11,6 +11,8 @@ public class CommandFactory {
                 return new SignupPage();
             case "sign up":
                 return new SignupCommand();
+            case "admin page":
+                return new AdminPage();
             case "create":
                 return new CreateCommand();
             case "update":
@@ -19,7 +21,7 @@ public class CommandFactory {
                 return new DeleteCommand();
             case "read":
                 return new ReadCommand();
-            case "add image":
+            case "upload":
                 return new UploadPage();
             case "logout":
                 return new LogoutCommand();

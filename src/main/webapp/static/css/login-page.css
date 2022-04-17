@@ -80,6 +80,7 @@ body{
 
 .log-in-button{
     float: left;
+    margin-top: 15px;
 }
 
 .sign-up-button{
