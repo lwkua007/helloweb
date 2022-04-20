@@ -11,7 +11,7 @@
         <div class="login-box">
             <h2>Sign Up</h2>
 
-            <form action="controller?command=sign up" method="post">
+            <form action="controller?command=signUp" method="post">
                 <div class="login-field">
                     <input type="text" name="email" required />
                     <label>Email</label>

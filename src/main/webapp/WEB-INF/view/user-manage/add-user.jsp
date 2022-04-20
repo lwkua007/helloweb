@@ -11,7 +11,7 @@
             <jsp:include page="/WEB-INF/fragments/manage-menu.jsp" />
         </div>
 
-        <form action="controller?command=AddUser" method="post">
+        <form action="controller?command=addUser" method="post">
             <div class="login-field">
                 <input type="text" name="isAdmin" required />
                 <label>Is admin</label>

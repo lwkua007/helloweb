@@ -19,7 +19,7 @@ public class SignupCommand implements Command {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-        User user = new User(0, email, password, 1, .0, 0);
+        User user = new User(0, 0, email, password, 1, .0, 0);
         dao.signUp(user);
 
         return "index.jsp";

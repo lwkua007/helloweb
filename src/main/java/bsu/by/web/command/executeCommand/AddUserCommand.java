@@ -20,7 +20,7 @@ public class AddUserCommand implements Command {
         Integer state = Integer.parseInt(req.getParameter("state"));
         Double balance = Double.parseDouble(req.getParameter("balance"));
 
-        User user = new User(isAdmin, email, password, state, balance, 0);
+        User user = new User(0, isAdmin, email, password, state, balance, 0);
         dao.addUser(user);
 
         return "WEB-INF/view/user-manage/add-user.jsp";

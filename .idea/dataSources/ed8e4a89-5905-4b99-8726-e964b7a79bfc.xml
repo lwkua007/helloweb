@@ -1044,65 +1044,69 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <key id="299" parent="287" name="PRIMARY">
+    <column id="299" parent="287" name="user_id">
+      <DataType>int|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <key id="300" parent="287" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="300" parent="288" name="id">
+    <column id="301" parent="288" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="301" parent="288" name="rating">
+    <column id="302" parent="288" name="rating">
       <DataType>tinyint|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="302" parent="288" name="image_id">
+    <column id="303" parent="288" name="image_id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="303" parent="288" name="user_id">
+    <column id="304" parent="288" name="user_id">
       <DataType>int|0s</DataType>
       <Position>4</Position>
     </column>
-    <key id="304" parent="288" name="PRIMARY">
+    <key id="305" parent="288" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="289" name="id">
+    <column id="306" parent="289" name="id">
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="306" parent="289" name="is_admin">
+    <column id="307" parent="289" name="is_admin">
       <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="307" parent="289" name="email">
+    <column id="308" parent="289" name="email">
       <DataType>varchar(100)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="308" parent="289" name="password">
+    <column id="309" parent="289" name="password">
       <DataType>varchar(100)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="309" parent="289" name="state">
+    <column id="310" parent="289" name="state">
       <DataType>tinyint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="310" parent="289" name="balance">
+    <column id="311" parent="289" name="balance">
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <key id="311" parent="289" name="PRIMARY">
+    <key id="312" parent="289" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>

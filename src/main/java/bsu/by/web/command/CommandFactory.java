@@ -10,34 +10,34 @@ public class CommandFactory {
         switch (command){
             case "login":
                 return new LoginCommand();
-            case "sign-up-page":
+            case "signUpPage":
                 return new SignupPage();
-            case "sign up":
+            case "signUp":
                 return new SignupCommand();
 
             case "search":
                 return new SearchCommand();
-            case "upload-page":
+            case "uploadPage":
                 return new UploadPage();
             case "upload":
                 return new UploadCommand();
             case "logout":
                 return new LogoutCommand();
 
-            case "user manage":
+            case "userManage":
                 return new UserManagePage();
-            case "AddUser":
+            case "addUser":
                 return new AddUserCommand();
-            case "AddUserPage":
+            case "addUserPage":
                 return new AddUserPage();
-            case "QueryUser":
+            case "queryUser":
                 return new QueryUserCommand();
-            case "QueryUserPage":
+            case "queryUserPage":
                 return new QueryUserPage();
-//            case "UpdateUserInfo":
+//            case "updateUserInfo":
 //                return new UpdateUserInfoCommand();
-//            case "DeleteUser":
-//                return new DeleteUserCommand();
+            case "deleteUser":
+                return new DeleteUserCommand();
 
             default:
                 throw new UnsupportedOperationException();

@@ -24,6 +24,7 @@
                 <th scope="col">update</th>
                 <th scope="col">delete</th>
 
+
             </tr>
             <c:forEach items="${users}" var="users">
                 <tr>
@@ -34,14 +35,13 @@
                     <td>${users.state}</td>
                     <td>${users.balance}</td>
                     <td>${users.image_count}</td>
-                    <td><a href="controller?command=UpdateUserInfo"><button type="button">update</button></a></td>
-                    <td><a href="controller?command=DeleteUser"><button type="button">download</button></a></td>
+                    <td><a href="controller?command=updateUserInfo"><button type="button">update</button></a></td>
+                    <td><a href="controller?command=deleteUser&userId=${users.userId}"><button type="button">delete</button></a></td>
                 </tr>
             </c:forEach>
             </thead>
         </table>
 
-        <a href="controller?command=QueryUser"><button type="button">All</button></a>
 
     </body>
 </html>
