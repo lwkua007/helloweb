@@ -4,28 +4,38 @@ package bsu.by.web.dao;
 import bsu.by.web.entity.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UserDao {
-    public User login(String email, String password)
-            throws SQLException{
+
+
+    public User login(String email, String password) throws SQLException{
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.prepareStatement
-                ("select is_admin, email, password from user where email = ? and password = MD5(?)");
+                ("select * from user where email = ? and password = MD5(?)");
 
         statement.setString(1, email);
         statement.setString(2, password);
+
         ResultSet resultSet = statement.executeQuery();
+
         if (resultSet.next()){
-            return new User(
+            return new User(0,
                     resultSet.getInt("is_admin"),
                     resultSet.getString("email"),
-                    resultSet.getString("password"));
+                    resultSet.getString("password"),
+                    resultSet.getInt("state"),
+                    resultSet.getDouble("balance"),
+                    0
+            );
         }
         return null;
     }
+
 
     public void signUp(User signup) throws SQLException{
         ConnectionFactory factory = new ConnectionFactory();
@@ -34,22 +44,79 @@ public class UserDao {
         PreparedStatement statement = connection.
                 prepareStatement("INSERT INTO user " +
                         "(is_admin, email, password, state, balance) VALUES (0, ?, ?, 1, 0)");
+
         statement.setString(1, signup.getEmail());
         statement.setString(2, signup.getPassword());
+
         statement.executeUpdate();
     }
 
-    public void create(User create) throws SQLException{
+
+    public void addUser(User addUser) throws SQLException{
         ConnectionFactory factory = new ConnectionFactory();
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.
                 prepareStatement("insert into user " +
-                        "(email, password, is_admin, state, balance) values (?, ?, ?, 1, 0)");
-        statement.setString(1, create.getEmail());
-        statement.setString(2, create.getPassword());
-        statement.setInt(3, create.getIsAdmin());
-        statement.executeUpdate();
+                        "(is_admin, email, password, state, balance) values (?, ?, ?, ?, ?)");
 
+        statement.setInt(1, addUser.getIsAdmin());
+        statement.setString(2, addUser.getEmail());
+        statement.setString(3, addUser.getPassword());
+        statement.setInt(4, addUser.getState());
+        statement.setDouble(5, addUser.getBalance());
+
+        statement.executeUpdate();
+    }
+
+
+    private List<User> map(ResultSet resultSet) throws SQLException{
+        List<User> users = new ArrayList<>();
+
+        while (resultSet.next()){
+            Integer userId = resultSet.getInt("userId");
+            Integer is_admin = resultSet.getInt("is_admin");
+            String email = resultSet.getString("email");
+            String password = resultSet.getString("password");
+            Integer state = resultSet.getInt("state");
+            Double balance = resultSet.getDouble("balance");
+            Integer image_count = resultSet.getInt("image_count");
+
+            User user = new User(userId, is_admin, email, password, state, balance, image_count);
+            users.add(user);
+        }
+        return users;
+    }
+
+    public List<User> findAll() throws SQLException {
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("select id userId, is_admin, email, password, state, balance, image_count " +
+                        "from (select * from user u left outer join " +
+                        "(select image.user_id,count(image.id)image_count from image group by image.user_id)c " +
+                        "on u.id=c.user_id)user;");
+
+        ResultSet resultSet = statement.executeQuery();
+
+        List<User> users = map(resultSet);
+
+        return users;
+    }
+
+    public void deleteUser(Integer userId) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("delete u.*,i.*,il.* from user u " +
+                        "LEFT JOIN image i on u.id=i.user_id " +
+                        "LEFT JOIN image_location il on u.id=il.user_id " +
+                        "where u.id=?;");
+
+        statement.setInt(1, userId);
+
+        statement.executeUpdate();
     }
 }

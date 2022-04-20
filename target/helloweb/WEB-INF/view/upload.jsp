@@ -3,22 +3,23 @@
 <html lang="en">
     <body>
         <h2>Add images</h2>
-        <div style="position: relative;">
-            <input id="upload-input" style="position: absolute; top: 0; bottom: 0; left: 0;right: 0; opacity: 0;" type="file" accept="image/jpg, image/png" />
 
-            <div style="text-align: top">
-                <span style="font-size: 12px;">upload：</span>
-                <img id="upload" src="./static/icons/cloud.png" style="width: 40px; height: 40px; vertical-align: middle;" />
-            </div>
+        <div>
+            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
+        <form action="controller?command=upload" method="post">
+            <div>
+                <input id="choose file" type="file" accept="image/jpeg, image/png" />
+            </div>
 
-        <form action="controller?command=create" method="post">
-            name:<input type="text" name="name"><br>
-            category:<input type="text" name="category"><br>
-            <input type="submit">
+            <p>
+                name:<input type="text" name="name"><br>
+                category:<input type="text" name="category"><br>
+                price:$<input type="text" name="price"><br>
+                    <input type="submit" name="upload">
+            </p>
         </form>
-        <br />
-        <a href="controller?command=read">imageList</a>
+
     </body>
 </html>

@@ -33,7 +33,7 @@
                 </div>
             </form>
 
-            <form action="controller?command=sign-up-page" method="post">
+            <form action="controller?command=signUpPage" method="post">
                 <div class="sign-up-button">
                     <button type="submit">sign up</button>
                 </div>
