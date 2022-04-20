@@ -28,7 +28,9 @@ public class ImageDao {
             Integer id = resultSet.getInt("id");
             String name = resultSet.getString("name");
             String category = resultSet.getString("category");
-            Image image = new Image(id, name, category);
+            Double price = resultSet.getDouble("price");
+            Double rating = resultSet.getDouble("rating");
+            Image image = new Image(id, name, category, price, rating);
             images.add(image);
         }
 
@@ -40,23 +42,24 @@ public class ImageDao {
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.
-                prepareStatement("select id, name, category from image");
+                prepareStatement("select image.name,image.id,image.category,image.price," +
+                        "ROUND(AVG(rate.rating),1) as rating from image,rate where image.id = rate.image_id;");
         ResultSet resultSet = statement.executeQuery();
 
         List<Image> images = map(resultSet);
         return images;
     }
 
-    public void save(Image image) throws SQLException{
-        ConnectionFactory factory = new ConnectionFactory();
-        Connection connection = factory.create();
-
-        PreparedStatement statement = connection.
-                prepareStatement("insert into image (name, category) values (?,?)");
-        statement.setString(1, image.getName());
-        statement.setString(2, image.getCategory());
-        statement.executeUpdate();
-
-    }
+//    public void save(Image image) throws SQLException{
+//        ConnectionFactory factory = new ConnectionFactory();
+//        Connection connection = factory.create();
+//
+//        PreparedStatement statement = connection.
+//                prepareStatement("insert into image (name, category) values (?,?)");
+//        statement.setString(1, image.getName());
+//        statement.setString(2, image.getCategory());
+//        statement.executeUpdate();
+//
+//    }
 
 }

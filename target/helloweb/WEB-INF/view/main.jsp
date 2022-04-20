@@ -13,8 +13,8 @@
             <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
-        <div>
-            <hr class="center-line"/>
+        <div class="search-box">
+            <jsp:include page="/WEB-INF/fragments/search.jsp" />
         </div>
 
     </body>

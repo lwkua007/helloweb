@@ -6,11 +6,17 @@ public class User implements Serializable {
     private Integer isAdmin;
     private String email;
     private String password;
+    private Integer state;
+    private Double balance;
+    private Integer image_count;
 
-    public User(Integer isAdmin, String email, String password) {
+    public User(Integer isAdmin, String email, String password, Integer state, Double balance, Integer image_count) {
         this.isAdmin = isAdmin;
         this.email = email;
         this.password = password;
+        this.state = state;
+        this.balance = balance;
+        this.image_count = image_count;
     }
 
     public Integer getIsAdmin() {
@@ -35,5 +41,29 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
+
+    public Double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
+
+    public Integer getImage_count() {
+        return image_count;
+    }
+
+    public void setImage_count(Integer image_count) {
+        this.image_count = image_count;
     }
 }
