@@ -34,8 +34,10 @@ public class CommandFactory {
                 return new QueryUserCommand();
             case "queryUserPage":
                 return new QueryUserPage();
-//            case "updateUserInfo":
-//                return new UpdateUserInfoCommand();
+            case "updateUserInfo":
+                return new UpdateUserInfoCommand();
+            case "updateUserInfoPage":
+                return new UpdateUserInfoPage();
             case "deleteUser":
                 return new DeleteUserCommand();
 

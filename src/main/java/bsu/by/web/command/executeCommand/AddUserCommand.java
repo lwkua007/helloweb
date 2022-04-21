@@ -23,6 +23,8 @@ public class AddUserCommand implements Command {
         User user = new User(0, isAdmin, email, password, state, balance, 0);
         dao.addUser(user);
 
+        req.setAttribute("addStateMessage", "Added Success!");
+
         return "WEB-INF/view/user-manage/add-user.jsp";
     }
 }

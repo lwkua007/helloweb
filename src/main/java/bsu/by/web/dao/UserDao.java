@@ -119,4 +119,55 @@ public class UserDao {
 
         statement.executeUpdate();
     }
+
+    private List<User> mapFindByUserId(ResultSet resultSet) throws SQLException{
+        List<User> users = new ArrayList<>();
+
+        while (resultSet.next()){
+            Integer userId = resultSet.getInt("userId");
+            Integer isAdmin = resultSet.getInt("isAdmin");
+            String email = resultSet.getString("email");
+            String password = resultSet.getString("password");
+            Integer state = resultSet.getInt("state");
+            Double balance = resultSet.getDouble("balance");
+
+            User user = new User(userId, isAdmin, email, password, state, balance,0);
+            users.add(user);
+        }
+        return users;
+    }
+
+    public User findByUserId(Integer userId) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("SELECT id userId,is_admin isAdmin,email,password,state,balance " +
+                        "from user WHERE id=?;");
+
+        statement.setInt(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+        List<User> users = mapFindByUserId(resultSet);
+
+        return users.size()==1 ? users.get(0):null;
+    }
+
+    public void updateUserInfo(User user)
+            throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("update user set is_admin = ?,email =?,password =?,state =?,balance=? where id =?;");
+
+        statement.setInt(1, user.getIsAdmin());
+        statement.setString(2, user.getEmail());
+        statement.setString(3, user.getPassword());
+        statement.setInt(4, user.getState());
+        statement.setDouble(5, user.getBalance());
+        statement.setInt(6, user.getUserId());
+
+        statement.executeUpdate();
+    }
 }
