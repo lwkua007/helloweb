@@ -5,13 +5,11 @@
         <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
     </head>
     <body>
-        <div class="text-box">
+        <div class="title-box">
         <h1>Share free!</h1>
         </div>
 
-        <div class="menu-box">
-            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
-        </div>
+        <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <div class="search-box">
             <jsp:include page="/WEB-INF/fragments/search.jsp" />
