@@ -96,7 +96,7 @@ public class UserDao {
                 prepareStatement("select id userId, is_admin, email, password, state, balance, image_count " +
                         "from (select * from user u left outer join " +
                         "(select image.user_id,count(image.id)image_count from image group by image.user_id)c " +
-                        "on u.id=c.user_id)user;");
+                        "on u.id=c.user_id)user order by is_admin desc;");
 
         ResultSet resultSet = statement.executeQuery();
 
