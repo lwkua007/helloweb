@@ -25,6 +25,6 @@ public class AddUserCommand implements Command {
 
         req.setAttribute("addStateMessage", "Added Success!");
 
-        return "WEB-INF/view/user-manage/add-user.jsp";
+        return "WEB-INF/view/add-user.jsp";
     }
 }
