@@ -1,8 +1,10 @@
 package bsu.by.web.command;
 
 
-import bsu.by.web.command.executeCommand.*;
-import bsu.by.web.command.jumpPageCommand.*;
+import bsu.by.web.command.image.SearchCommand;
+import bsu.by.web.command.image.UploadCommand;
+import bsu.by.web.command.image.UploadPage;
+import bsu.by.web.command.user.*;
 
 public class CommandFactory {
 

@@ -29,7 +29,9 @@
             </tr>
             <c:forEach items="${users}" var="users">
                 <tr>
-                    <td>${users.isAdmin}</td>
+                    <td><c:if test="${users.isAdmin==1}">admin</c:if>
+                        <c:if test="${users.isAdmin==0}">user</c:if>
+                    </td>
                     <td>${users.email}</td>
                     <td>${users.password}</td>
                     <td>${users.state}</td>

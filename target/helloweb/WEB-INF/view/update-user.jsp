@@ -2,18 +2,20 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html lang="en">
 
-<link rel="stylesheet" type="text/css" href="static/css/main-page.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
+    </head>
 
     <body>
-        <div class="text-box">
-            <h2>Welcome!Admin.</h2>
+        <div class="title-box">
+            <h1>Welcome!Admin.</h1>
         </div>
 
-        <div class="menu-box">
+        <div>
             <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
-        <form action="controller?command=updateUserInfo" method="post">
+        <form action="controller?command=updateUserInfo" method="post" class="upload-box">
             <table>
                 <tr>
                     <th>is_admin</th>
