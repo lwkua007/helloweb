@@ -1,0 +1,73 @@
+body{
+    background-size: cover;
+    background: url(../icons/mainbg.jpg)no-repeat center center;
+}
+.title-box{
+    text-align: center;
+}
+.search-box{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
+.upload-box{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,0);
+
+}
+input[type=submit],button[type=submit]{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+input[type=submit]:hover,button[type=submit]:hover {
+    background-color: #80d79e;
+}
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+}
+button[type=button] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.query-box{
+    position: absolute;
+    top: 10%;
+    left: 20%;
+}
