@@ -1,6 +1,6 @@
 body{
     background-size: cover;
-    background: url(mainbg.jpg)no-repeat center center;
+    background: url(../icons/mainbg.jpg)no-repeat center center;
 }
 .title-box{
     text-align: center;
