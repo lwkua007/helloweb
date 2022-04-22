@@ -1,22 +1,23 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html lang="en">
+<html>
 
-<link rel="stylesheet" type="text/css" href="static/css/main-page.css">
+    <head>
+        <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
+    </head>
 
     <body>
-    <div class="text-box">
-        <h2>Add images</h2>
-    </div>
-
+        <div class="title-box">
+            <h1>Add images</h1>
+        </div>
 
         <div>
             <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
-        <form action="controller?command=upload" method="post">
+        <form action="controller?command=upload" method="post" class="upload-box">
             <div>
-                <input id="choose file" type="file" accept="image/jpeg, image/png" />
+                <input type="file" accept="image/jpeg, image/png" />
             </div>
 
             <p>
@@ -28,4 +29,5 @@
         </form>
 
     </body>
+
 </html>

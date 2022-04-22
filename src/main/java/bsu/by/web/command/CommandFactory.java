@@ -24,8 +24,6 @@ public class CommandFactory {
             case "logout":
                 return new LogoutCommand();
 
-            case "userManage":
-                return new UserManagePage();
             case "addUser":
                 return new AddUserCommand();
             case "addUserPage":
