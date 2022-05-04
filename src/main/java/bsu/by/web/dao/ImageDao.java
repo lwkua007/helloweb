@@ -2,6 +2,7 @@ package bsu.by.web.dao;
 
 
 import bsu.by.web.entity.Image;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class ImageDao {
             Integer imageId = resultSet.getInt("imageId");
             String name = resultSet.getString("name");
             String category = resultSet.getString("category");
-            Double price = resultSet.getDouble("price");
+            String price = resultSet.getString("price");
             Double rating = resultSet.getDouble("rating");
             Image image = new Image(imageId, name, category, price, rating);
             images.add(image);
@@ -40,6 +41,23 @@ public class ImageDao {
 
         List<Image> images = map(resultSet);
         return images;
+    }
+
+
+    public void uploadImageInfo(Image uploadImageInfo) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("INSERT INTO image (name, category, price, user_id, location) VALUES (?, ?, ?, ?, ?);");
+
+        statement.setString(1, uploadImageInfo.getName());
+        statement.setString(2, uploadImageInfo.getCategory());
+        statement.setString(3, uploadImageInfo.getPrice());
+        statement.setInt(4, uploadImageInfo.getUserId());
+        statement.setString(5,uploadImageInfo.getLocation());
+
+        statement.executeUpdate();
     }
 
 }

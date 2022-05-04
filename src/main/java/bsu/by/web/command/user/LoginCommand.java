@@ -16,6 +16,7 @@ public class LoginCommand implements Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp)
             throws SQLException, ServletException, IOException {
+
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
@@ -23,8 +24,8 @@ public class LoginCommand implements Command {
         User user = dao.login(email, password);
 
         if (user != null){
-            req.getSession().setAttribute("user", user);
 
+            req.getSession().setAttribute("user", user);
             req.getRequestDispatcher("controller?command=search").forward(req, resp);
 
             return "/WEB-INF/fragments/search.jsp";

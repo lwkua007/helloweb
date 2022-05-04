@@ -24,13 +24,13 @@ public class UserDao {
         ResultSet resultSet = statement.executeQuery();
 
         if (resultSet.next()){
-            return new User(0,
+            return new User(
+                    resultSet.getInt("id"),
                     resultSet.getInt("is_admin"),
                     resultSet.getString("email"),
                     resultSet.getString("password"),
                     resultSet.getInt("state"),
-                    resultSet.getDouble("balance"),
-                    0
+                    resultSet.getDouble("balance")
             );
         }
         return null;
@@ -110,10 +110,7 @@ public class UserDao {
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.
-                prepareStatement("delete u.*,i.*,il.* from user u " +
-                        "LEFT JOIN image i on u.id=i.user_id " +
-                        "LEFT JOIN image_location il on u.id=il.user_id " +
-                        "where u.id=?;");
+                prepareStatement("delete from user where id=?;");
 
         statement.setInt(1, userId);
 
@@ -131,7 +128,7 @@ public class UserDao {
             Integer state = resultSet.getInt("state");
             Double balance = resultSet.getDouble("balance");
 
-            User user = new User(userId, isAdmin, email, password, state, balance,0);
+            User user = new User(userId, isAdmin, email, password, state, balance);
             users.add(user);
         }
         return users;

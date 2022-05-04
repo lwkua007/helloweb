@@ -1,19 +1,29 @@
 package bsu.by.web.entity;
 
-
 public class Image {
     private Integer imageId;
     private String name;
     private String category;
-    private Double price;
+    private String price;
     private Double rating;
+    private Integer userId;
+    private String location;
 
-    public Image(Integer imageId, String name, String category, Double price, Double rating) {
+
+    public Image(Integer imageId, String name, String category, String price, Double rating) {
         this.imageId = imageId;
         this.name = name;
         this.category = category;
         this.price = price;
         this.rating = rating;
+    }
+
+    public Image(String name, String category, String price, Integer userId, String location) {
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.userId = userId;
+        this.location = location;
     }
 
     public Integer getImageId() {
@@ -40,11 +50,11 @@ public class Image {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -55,4 +65,21 @@ public class Image {
     public void setRating(Double rating) {
         this.rating = rating;
     }
+
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 }

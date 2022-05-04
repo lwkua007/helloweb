@@ -11,6 +11,8 @@ public class User implements Serializable {
     private Double balance;
     private Integer image_count;
 
+
+
     public User(Integer userId, Integer isAdmin, String email, String password, Integer state, Double balance, Integer image_count) {
         this.userId = userId;
         this.isAdmin = isAdmin;
@@ -20,6 +22,24 @@ public class User implements Serializable {
         this.balance = balance;
         this.image_count = image_count;
     }
+
+    public User(Integer isAdmin, String email, String password, Integer state, Double balance) {
+        this.isAdmin = isAdmin;
+        this.email = email;
+        this.password = password;
+        this.state = state;
+        this.balance = balance;
+    }
+
+    public User(Integer userId, Integer isAdmin, String email, String password, Integer state, Double balance) {
+        this.userId = userId;
+        this.isAdmin = isAdmin;
+        this.email = email;
+        this.password = password;
+        this.state = state;
+        this.balance = balance;
+    }
+
 
     public User(Integer userId) {
         this.userId = userId;

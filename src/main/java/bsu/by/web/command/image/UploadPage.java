@@ -11,6 +11,6 @@ public class UploadPage implements Command {
     public String execute (HttpServletRequest req, HttpServletResponse resp)
         throws SQLException, ClassNotFoundException {
 
-        return "/WEB-INF/view/upload.jsp";
+        return "/WEB-INF/view/upload-image.jsp";
     }
 }

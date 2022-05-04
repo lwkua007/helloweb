@@ -21,19 +21,18 @@
 
   <dependencies>
     <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>8.0.28</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api -->
-    <!--<dependency>
+<!--    &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-servlet-api &ndash;&gt;-->
+    <dependency>
       <groupId>jakarta.servlet</groupId>
       <artifactId>jakarta.servlet-api</artifactId>
       <version>5.0.0</version>
-    </dependency>-->
+    </dependency>
 
     <!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp/jakarta.servlet.jsp-api -->
     <dependency>
@@ -63,12 +62,21 @@
       <scope>test</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+    <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
     <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.6</version>
+      <groupId>commons-codec</groupId>
+      <artifactId>commons-codec</artifactId>
+      <version>1.15</version>
     </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-util -->
+    <dependency>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat-util</artifactId>
+      <version>10.0.16</version>
+    </dependency>
+
+
 
   </dependencies>
 
@@ -107,5 +115,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>8</source>
+                  <target>8</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>
