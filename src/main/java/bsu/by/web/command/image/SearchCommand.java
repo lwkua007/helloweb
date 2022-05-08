@@ -3,9 +3,11 @@ package bsu.by.web.command.image;
 import bsu.by.web.command.Command;
 import bsu.by.web.dao.ImageDao;
 import bsu.by.web.entity.Image;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 import java.util.List;
 

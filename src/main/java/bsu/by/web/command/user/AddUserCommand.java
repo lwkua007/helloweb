@@ -3,10 +3,12 @@ package bsu.by.web.command.user;
 import bsu.by.web.command.Command;
 import bsu.by.web.dao.UserDao;
 import bsu.by.web.entity.User;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
 import org.apache.commons.codec.digest.DigestUtils;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 
 public class AddUserCommand implements Command {

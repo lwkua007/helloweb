@@ -20,8 +20,7 @@
     </tr>
     <c:forEach items="${images}" var="images">
         <tr>
-<%--            <td>${images.image}</td>--%>
-            <td></td>
+            <td><img style="width: 200px; height: 100px;" src="${images.location}"data-holder-rendered="true"></td>
             <td>${images.name}</td>
             <td>${images.category}</td>
             <td>${images.rating}</td>
