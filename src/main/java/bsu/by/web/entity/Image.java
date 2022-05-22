@@ -10,19 +10,21 @@ public class Image {
     private String location;
 
 
-    public Image(Integer imageId, String name, String category, String price, Double rating) {
-        this.imageId = imageId;
-        this.name = name;
-        this.category = category;
-        this.price = price;
-        this.rating = rating;
-    }
-
     public Image(String name, String category, String price, Integer userId, String location) {
         this.name = name;
         this.category = category;
         this.price = price;
         this.userId = userId;
+        this.location = location;
+    }
+
+
+    public Image(Integer imageId, String name, String category, String price, Double rating, String location) {
+        this.imageId = imageId;
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.rating = rating;
         this.location = location;
     }
 

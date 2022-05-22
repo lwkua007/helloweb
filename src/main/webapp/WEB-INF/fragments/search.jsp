@@ -1,8 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<head>
-    <link rel="stylesheet" type="text/css" href="static/css/main-page.css">
-</head>
+<%--<head>--%>
+<%--&lt;%&ndash;    <link rel="stylesheet" type="text/css" href="static/css/main-page.css">&ndash;%&gt;--%>
+<%--</head>--%>
 
 <table id="customers">
     <tr>
@@ -16,19 +16,31 @@
         <c:if test="${user != null and user.isAdmin == 1}">
             <th scope="col">delete</th>
         </c:if>
-
     </tr>
+
     <c:forEach items="${images}" var="images">
         <tr>
-            <td><img style="width: 200px; height: 100px;" src="${images.location}"data-holder-rendered="true"></td>
+            <td><img style="width: 200px; height: 100px;" src="${images.location}" data-holder-rendered="true"></td>
             <td>${images.name}</td>
             <td>${images.category}</td>
-            <td>${images.rating}</td>
+            <td><div style="position:relative;left: 42%;">${images.rating}</div>
+                <div class="rating">
+                    <a href="controller?command=ratingImage&rating=5&imageId=${images.imageId}&userId=${user.userId}"><button class="rating__star">&#10084;&nbsp;</button></a>
+                    <a href="controller?command=ratingImage&rating=4&imageId=${images.imageId}&userId=${user.userId}"><button class="rating__star">&#10084;&nbsp;</button></a>
+                    <a href="controller?command=ratingImage&rating=3&imageId=${images.imageId}&userId=${user.userId}"><button class="rating__star">&#10084;&nbsp;</button></a>
+                    <a href="controller?command=ratingImage&rating=2&imageId=${images.imageId}&userId=${user.userId}"><button class="rating__star">&#10084;&nbsp;</button></a>
+                    <a href="controller?command=ratingImage&rating=1&imageId=${images.imageId}&userId=${user.userId}"><button class="rating__star">&#10084;&nbsp;</button></a>
+                </div>
+            </td>
             <td>${images.price}</td>
-            <td><a href="controller?command=buy&id=${images.imageId}"><button type="button">buy</button></a></td>
-            <td><a href="controller?command=download&id=${images.imageId}"><button type="button">download</button></a></td>
+            <td><a href="controller?command=buyImagePage"><button type="button">buy</button></a></td>
+            <td><a href="${images.location}" download="${images.location}"><button type="button">download</button></a></td>
             <c:if test="${user != null and user.isAdmin == 1}">
-                <td><a href="controller?command=delete&id=${images.imageId}"><button type="button">delete</button></a></td>
+                <td>
+                    <a href="controller?command=deleteImage&imageId=${images.imageId}">
+                        <button type="button">delete</button>
+                    </a>
+                </td>
             </c:if>
         </tr>
     </c:forEach>

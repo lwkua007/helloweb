@@ -29,9 +29,9 @@ public class LoginCommand implements Command {
         if (user != null){
 
             req.getSession().setAttribute("user", user);
-            req.getRequestDispatcher("controller?command=search").forward(req, resp);
 
-            return "/WEB-INF/fragments/search.jsp";
+            req.getRequestDispatcher("controller?command=searchImage").include(req, resp);
+            return null;
         }
         else {
             req.setAttribute("error_message", "Incorrect email or password");

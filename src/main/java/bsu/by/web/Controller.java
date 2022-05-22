@@ -43,6 +43,7 @@ public class Controller extends HttpServlet {
             String page = command.execute(req, resp);
 
             req.getRequestDispatcher(page).forward(req, resp);
+
         } catch (SQLException | ServletException | ClassNotFoundException | FileUploadException e) {
             e.printStackTrace();
         }

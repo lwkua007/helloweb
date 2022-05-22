@@ -17,10 +17,10 @@
             <jsp:include page="/WEB-INF/fragments/menu.jsp" />
         </div>
 
-        <form action="controller?command=upload&userId=${user.userId}" enctype="multipart/form-data" method="post" class="upload-box">
+        <form action="controller?command=uploadImage&userId=${user.userId}" enctype="multipart/form-data" method="post" class="upload-box">
             <div>
-                <img id="uploadImage" src="" width=120 alt="">
-                <input type="file" accept="image/jpeg, image/png" name="location"/>
+                <img src="static/icons/cloud.png" width="150px" height="150px" alt="" id="previewImage">
+                <input type="file" accept="image/jpeg, image/png" name="location" onchange="selectImage(this);"/>
             </div>
 
             <p>
@@ -35,6 +35,20 @@
             </c:if>
         </form>
 
+        <script>
+            var image = '';
+            function selectImage(file) {
+                if (!file.files || !file.files[0]) {
+                    return;
+                }
+                var reader = new FileReader();
+                reader.onload = function (evt) {
+                    document.getElementById('previewImage').src = evt.target.result;
+                    image = evt.target.result;
+                }
+                reader.readAsDataURL(file.files[0]);
+            }
+        </script>
     </body>
 
 </html>

@@ -167,4 +167,25 @@ public class UserDao {
 
         statement.executeUpdate();
     }
+
+    public List<User> findByName(String name) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("select id userId, is_admin, email, password, state, balance, image_count " +
+                        "from (" +
+                        "select * from user u " +
+                        "left outer join " +
+                        "(select image.user_id,count(image.id)image_count " +
+                        "from image group by image.user_id)c on u.id=c.user_id)user " +
+                        "where email like ? order by is_admin desc;");
+
+        statement.setString(1, name);
+
+        ResultSet resultSet = statement.executeQuery();
+        List<User> users = map(resultSet);
+
+        return users;
+    }
 }

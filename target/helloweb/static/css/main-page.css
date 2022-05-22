@@ -7,8 +7,8 @@ body{
 }
 .search-box{
     position: absolute;
-    top: 10%;
-    left: 20%;
+    top: 9%;
+    left: 15%;
 }
 .upload-box{
     position: absolute;
@@ -18,7 +18,7 @@ body{
 
 }
 input[type=submit],button[type=submit]{
-    background-color: #4CAF50;
+    background-color: #f08a5d;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -36,8 +36,9 @@ input[type=text], input[type=password], select {
     box-sizing: border-box;
 }
 input[type=submit]:hover,button[type=submit]:hover {
-    background-color: #80d79e;
+    background-color: #7dd5d0;
 }
+
 #customers {
     border-collapse: collapse;
     width: 100%;
@@ -45,6 +46,7 @@ input[type=submit]:hover,button[type=submit]:hover {
 
 #customers td, #customers th {
     padding: 8px;
+    text-align: center;
 }
 
 #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -55,10 +57,11 @@ input[type=submit]:hover,button[type=submit]:hover {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #04AA6D;
+    background-color: #7dd5d0;
 }
+
 button[type=button] {
-    background-color: #4CAF50;
+    background-color: #f08a5d;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -68,6 +71,70 @@ button[type=button] {
 }
 .query-box{
     position: absolute;
-    top: 10%;
-    left: 20%;
+    top: 135px;
+    left: 15%;
+}
+
+.rating {
+    /* Center the content */
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    flex-direction: row-reverse;
+
+    font-size: 32px;
+}
+
+.rating__star:hover,
+.rating__star:hover ~ .rating__star {
+    color: transparent;
+}
+
+/*
+Make all previous stars selected when hover on a star
+Note that we use `flex-direction: row-reverse` on the container
+*/
+.rating__star:hover:before,
+.rating__star:hover ~ .rating__star:before {
+    color: #f08a5d;
+    content: '\2605';
+    left: 0;
+    position: absolute;
+}
+
+.rating__star {
+    /* Reset styles for button */
+    background-color: transparent;
+    border: transparent;
+    margin: 0 2px;
+    padding: 0;
+
+    /* Used to position the hover state */
+    position: relative;
+}
+
+.likeSearchBox{
+    position: absolute;
+    top: 3%;
+    right: 15%;
+}
+.likeSearchButton{
+    position: relative;
+    width: 36px;
+    height: 36px;
+    top: 13px;
+    right: 15%;
+}
+#table-title{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #7dd5d0;
+    width: 82%;
+}
+.user-title-box{
+    position: absolute;
+    top: 9%;
+    left: 15%;
 }

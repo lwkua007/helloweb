@@ -19,7 +19,8 @@ public class ImageDao {
             String category = resultSet.getString("category");
             String price = resultSet.getString("price");
             Double rating = resultSet.getDouble("rating");
-            Image image = new Image(imageId, name, category, price, rating);
+            String location = resultSet.getString("location");
+            Image image = new Image(imageId, name, category, price, rating, location);
             images.add(image);
         }
         return images;
@@ -31,7 +32,7 @@ public class ImageDao {
         Connection connection = factory.create();
 
         PreparedStatement statement = connection.
-                prepareStatement("SELECT id imageId, name, category, rating, price " +
+                prepareStatement("SELECT id imageId, name, location, category, rating, price " +
                         "FROM (SELECT * FROM image i " +
                         "LEFT OUTER JOIN " +
                         "(SELECT image_id,ROUND(AVG(rating),1)rating " +
@@ -60,4 +61,54 @@ public class ImageDao {
         statement.executeUpdate();
     }
 
+    public void deleteImage(Integer imageId) throws SQLException{
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("delete from image where id=?;");
+
+        statement.setInt(1, imageId);
+
+        statement.executeUpdate();
+    }
+
+    public List<Image> findByUserId(Integer userId) throws SQLException {
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("SELECT id imageId, name, location, category, rating, price " +
+                        "FROM (SELECT * FROM image i " +
+                        "LEFT OUTER JOIN " +
+                        "(SELECT image_id,ROUND(AVG(rating),1)rating " +
+                        "from rate GROUP BY image_id)r on i.id=r.image_id) image " +
+                        "where user_id = ?;");
+
+        statement.setInt(1, userId);
+
+        ResultSet resultSet = statement.executeQuery();
+        List<Image> images = map(resultSet);
+        return images;
+    }
+
+    public List<Image> findByImageName(String name) throws SQLException {
+        ConnectionFactory factory = new ConnectionFactory();
+        Connection connection = factory.create();
+
+        PreparedStatement statement = connection.
+                prepareStatement("SELECT id imageId, name, location, category, rating, price " +
+                        "FROM (" +
+                        "SELECT * FROM image i " +
+                        "LEFT OUTER JOIN " +
+                        "(SELECT image_id,ROUND(AVG(rating),1)rating " +
+                        "from rate GROUP BY image_id)r on i.id=r.image_id) image " +
+                        "where name like ?;");
+
+        statement.setString(1, name);
+
+        ResultSet resultSet = statement.executeQuery();
+        List<Image> images = map(resultSet);
+        return images;
+    }
 }

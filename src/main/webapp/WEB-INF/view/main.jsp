@@ -9,6 +9,13 @@
         <h1>Share free!</h1>
         </div>
 
+        <div style="position: absolute;top: 3%;right: 15%;">
+            <form action="controller?command=imageFuzzySearch" method="post">
+                <input type="text" style="width: 200px" name="name"/>
+                <button type="submit" style="background-color: transparent;padding: 0 0;margin: 0 0;"><img src="static/icons/read.svg" class="likeSearchButton"></button>
+            </form>
+        </div>
+
         <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <div class="search-box">
