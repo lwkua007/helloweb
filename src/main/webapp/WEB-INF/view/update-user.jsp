@@ -47,8 +47,7 @@
                 </tr>
 
                 <tr>
-                    <th></th>
-                    <td><button type="submit">ok</button></td>
+                    <td><button type="submit" class="update-user-button">update</button></td>
                 </tr>
             </table>
         </form>

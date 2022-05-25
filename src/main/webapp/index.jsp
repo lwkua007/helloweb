@@ -2,7 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
-
     <head>
         <link rel="stylesheet" type="text/css" href="static/css/login-page.css">
     </head>
@@ -32,7 +31,6 @@
                 <button type="submit">log in</button>
                 </div>
             </form>
-
 
             <form action="controller?command=signUpPage" method="post">
                 <div class="sign-up-button">

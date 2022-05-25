@@ -1,140 +1,275 @@
+/*-----all page style-----*/
 body{
     background-size: cover;
     background: url(../icons/mainbg.jpg)no-repeat center center;
 }
+
 .title-box{
     text-align: center;
+    top: 20px;
+    margin-top: 15px;
 }
-.search-box{
-    position: absolute;
-    top: 9%;
-    left: 15%;
-}
-.upload-box{
-    position: absolute;
-    left: 50%;
-    top: 20%;
-    transform: translate(-50%,0);
 
+
+/*-----main page and queryUser style-----*/
+.name-search-Box{
+    position: absolute;
+    top: 3%;
+    right: 200px;
+    width: 300px;
+    height: 50px;
 }
-input[type=submit],button[type=submit]{
-    background-color: #f08a5d;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-input[type=text], input[type=password], select {
-    width: 100%;
-    padding: 12px 20px;
+
+.name-search-Box input{
+    float: left;
+    padding: 10px 20px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
 }
-input[type=submit]:hover,button[type=submit]:hover {
-    background-color: #7dd5d0;
+
+.name-search-Box button{
+    float: left;
+    background-color: transparent;
+    border: transparent;
+    margin-top: 10px;
 }
 
-#customers {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#customers td, #customers th {
-    padding: 8px;
-    text-align: center;
-}
-
-#customers tr:nth-child(even){background-color: #f2f2f2;}
-
-#customers tr:hover {background-color: #ddd;}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #7dd5d0;
-}
-
-button[type=button] {
-    background-color: #f08a5d;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
+.name-search-Box img{
+    width: 36px;
+    height: 36px;
     cursor: pointer;
 }
-.query-box{
+
+.search-page-box{
     position: absolute;
-    top: 135px;
+    top: 9%;
     left: 15%;
 }
 
-.rating {
-    /* Center the content */
-    align-items: center;
-    display: flex;
-    justify-content: center;
 
-    flex-direction: row-reverse;
-
-    font-size: 32px;
+/*-----upload page style-----*/
+.upload-box{
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,0);
+    width: 350px;
 }
 
-.rating__star:hover,
-.rating__star:hover ~ .rating__star {
+.upload-box input{
+    width: 100%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.upload-box button, .query-box button{
+    background-color: #f08a5d;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.upload-box img{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 5px;
+}
+
+
+/*-----addUser page style-----*/
+.isAdmin-box input{
+    position: relative;
+    width: 50px;
+}
+
+
+/*-----queryUser page style-----*/
+.user-title-box{
+    padding:12px 0 12px 0;
+    text-align: center;
+    background-color: #7dd5d0;
+    width: 1345px;
+}
+
+.user-title-box th{
+    width: 110px;
+    height: 50px;
+    padding: 0;
+    text-align: center;
+}
+
+.password-col{
+    width: 500px !important;
+}
+
+.user-title-box{
+    position: absolute;
+    top: 9%;
+    left: 15%;
+}
+
+.query-box{
+    position: absolute;
+    top: 148px;
+    left: 286px;
+    padding:12px 0 12px 0;
+    text-align: center;
+    width: 1345px;
+}
+
+.query-box td{
+    width: 110px;
+    padding: 0;
+    height: 70px;
+    text-align: center;
+}
+
+.query-box tr:nth-child(even){
+    background-color: #f2f2f2;
+    width: 1345px;
+}
+
+.query-box tr:hover {
+    background-color: #7dd5d0;
+    width: 1345px;
+}
+
+
+/*-----Search page and MyImage page style-----*/
+.image-frame{
+    width: 1200px;
+}
+
+.image-preview img{
+    float: left;
+    width: 200px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+
+.image-information{
+    float: left;
+    width: 400px;
+    height: 180px;
+}
+
+.rating {
+    align-items: center;
+    display: flex;
+    justify-content: left;
+    flex-direction: row-reverse;
+    font-size: 15px;
+}
+
+.rating-star {
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    color: #7dd5d0;
+}
+
+.rating-star:hover, .rating-star:hover ~ .rating-star {
     color: transparent;
 }
 
-/*
-Make all previous stars selected when hover on a star
-Note that we use `flex-direction: row-reverse` on the container
-*/
-.rating__star:hover:before,
-.rating__star:hover ~ .rating__star:before {
+.rating-star:hover:before, .rating-star:hover ~ .rating-star:before {
     color: #f08a5d;
     content: '\2605';
     left: 0;
     position: absolute;
 }
-
-.rating__star {
-    /* Reset styles for button */
-    background-color: transparent;
-    border: transparent;
-    margin: 0 2px;
+.rating-star-link, .buy-link{
+    width: 15px;
+    height: 15px;
     padding: 0;
-
-    /* Used to position the hover state */
+}
+.rate-number{
     position: relative;
+    margin: 0 10px 0 10px;
+    width: 20px;
+    height: 15px;
+    line-height: 15px;
+}
+.price, .name, .category, .buy, .download, .delete, .my-image-rate{
+    position: relative;
+    margin: 0 10px 0 10px;
+    width: 20px;
+    height: 15px;
+    font-size: 15px;
 }
 
-.likeSearchBox{
-    position: absolute;
-    top: 3%;
-    right: 15%;
+.buy button{
+    background-color: #f08a5d;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 5px 0 0 0;
+    cursor: pointer;
+    border-radius: 3px;
 }
-.likeSearchButton{
+
+.download button{
+    background-color: #f08a5d;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.delete button{
+    background-color: #f08a5d;
+    border: none;
+    color: black;
+    padding: 5px 5px;
+    text-decoration: none;
+    margin: 35px 0 0 0;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+/*-----page break style-----*/
+#flip-button{
+    position: absolute;
+    bottom: 5%;
+    left: 39%;
+    width: 30%;
+    height: 20px;
+}
+#flip-button a{
+    padding: 0;
+    width: 55px;
+    height: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/*-----update page style-----*/
+.update-user-button{
     position: relative;
-    width: 36px;
-    height: 36px;
-    top: 13px;
-    right: 15%;
-}
-#table-title{
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #7dd5d0;
-    width: 82%;
-}
-.user-title-box{
-    position: absolute;
-    top: 9%;
-    left: 15%;
+    left: 82px;
+    background-color: #f08a5d;
+    color: black;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
 }

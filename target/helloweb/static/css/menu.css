@@ -1,14 +1,15 @@
-a{
-    padding-left: 2%;
-    height: 5%;
-    width: 10%;
+.hr-title{
+    position: absolute;
+    top: 70px;
+    left: 15%;
+    width: 70%;
+}
+.menu-box a{
+    width: 100px;
+    height: 30px;
+    margin: 20px 0 0 100px;
     display: inline-block;
     text-decoration: none;
     color: black;
-
-}
-.hr-title{
-    position: absolute;
-    left: 15%;
-    width: 70%;
+    align-items: center;
 }
