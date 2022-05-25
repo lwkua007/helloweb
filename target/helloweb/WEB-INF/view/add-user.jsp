@@ -14,7 +14,7 @@
         </div>
 
         <form action="controller?command=addUser" method="post"  class="upload-box">
-            <div>
+            <div class="isAdmin-box">
                 <label>Is admin:</label>
                 <input type="checkbox" name="isAdmin" value="1"/>
                 <input type="hidden" name="isAdmin" value="0"/>

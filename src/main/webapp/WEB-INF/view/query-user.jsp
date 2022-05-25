@@ -18,9 +18,7 @@
             </form>
         </div>
 
-        <div>
-            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
-        </div>
+        <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <div class="user-title-box">
             <jsp:include page="/WEB-INF/fragments/user-sheet-title.jsp" />

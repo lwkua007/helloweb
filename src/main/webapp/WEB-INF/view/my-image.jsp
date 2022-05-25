@@ -11,9 +11,7 @@
             <h1>Your image information.</h1>
         </div>
 
-        <div class="menu-box">
-            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
-        </div>
+        <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <div class="search-page-box">
             <table id="search-result">

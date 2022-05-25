@@ -11,9 +11,7 @@
             <h1>Welcome!Admin.</h1>
         </div>
 
-        <div>
-            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
-        </div>
+        <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <form action="controller?command=updateUserInfo" method="post" class="upload-box">
             <table>
