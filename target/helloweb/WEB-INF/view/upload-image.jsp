@@ -14,9 +14,7 @@
             <h1>Add images</h1>
         </div>
 
-        <div>
-            <jsp:include page="/WEB-INF/fragments/menu.jsp" />
-        </div>
+        <jsp:include page="/WEB-INF/fragments/menu.jsp" />
 
         <div class="upload-box">
             <form action="controller?command=uploadImage&userId=${user.userId}" enctype="multipart/form-data" method="post" class="upload-box">
